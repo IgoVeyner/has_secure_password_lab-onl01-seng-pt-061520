@@ -1,0 +1,12 @@
+<h1><%= title %></h1>
+
+<%= form_tag(path, method: :post) do %>
+  Username: <%= text_field_tag "user[name]" %> <br><br>
+  Password: <%= text_field_tag "user[password]" %> <br><br>
+
+  <% if !at_login_path? %>
+    Confirm Password: <%= text_field_tag "user[password_confirmation]" %> <br><br>
+  <% end %>
+
+  <%= submit_tag button_text %>
+<% end %>
